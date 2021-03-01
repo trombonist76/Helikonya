@@ -196,7 +196,6 @@ class Muhasebe(QMainWindow):
         result = tablo.selectedIndexes()
         if tablo.objectName() == "table_record":
             tablo_adi = "musteri"
-            # try:
             for nesne in result:
                 
                 data = nesne.data()
@@ -218,11 +217,6 @@ class Muhasebe(QMainWindow):
                 sql = self.cursor.execute(sql) 
                 self.conn.commit()
                     
-            # except Exception as err:
-            #     print(err)
-                
-            # finally:
-            #     pass
       
     def kayit_sil(self,tablo):
         result = tablo.selectionModel().selectedIndexes()
@@ -252,7 +246,7 @@ class Muhasebe(QMainWindow):
         text = self.ui.search_box.text()
         self.filtre.setFilterRegExp(text)
         self.ui.table_view.setModel(self.filtre)
-
+        
 
                 
         
